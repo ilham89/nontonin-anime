@@ -2,24 +2,8 @@ import React from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { useRouter } from 'next/router';
 import { IBaseLayout } from '@/shared/interfaces/base';
+import { variants } from '@/constants';
 
-const variants = {
-  out: {
-    opacity: 0,
-    y: 40,
-    transition: {
-      duration: 0.5,
-    },
-  },
-  in: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 0.5,
-      delay: 0.25,
-    },
-  },
-};
 const Transition = ({ children }: IBaseLayout) => {
   const { asPath } = useRouter();
 
