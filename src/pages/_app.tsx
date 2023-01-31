@@ -1,11 +1,13 @@
 import Transition from '@/shared/components/Transition';
 import useRouterChange from '@/shared/hooks/useRouterChange';
+import { AppPropsWithLayout } from '@/shared/interfaces/base';
 import '@/styles/globals.css';
-import type { AppProps } from 'next/app';
 
-export default function App({ Component, pageProps }: AppProps) {
+export default function App({ Component, pageProps }: AppPropsWithLayout) {
   const { loading } = useRouterChange();
-  return (
+  const getLayout = Component.getLayout ?? ((page) => page);
+
+  return getLayout(
     <Transition>
       {loading ? <h1>loading...</h1> : <Component {...pageProps} />}
     </Transition>
