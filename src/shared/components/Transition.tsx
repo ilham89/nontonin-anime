@@ -1,6 +1,7 @@
+import React from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { useRouter } from 'next/router';
-import React from 'react';
+import { IBaseLayout } from '../interfaces/base';
 
 const variants = {
   out: {
@@ -19,7 +20,7 @@ const variants = {
     },
   },
 };
-const Transition = ({ children }: { children: React.ReactElement }) => {
+const Transition = ({ children }: IBaseLayout) => {
   const { asPath } = useRouter();
 
   return (
