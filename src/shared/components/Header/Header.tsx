@@ -1,4 +1,5 @@
 import { Logo } from '@/assets';
+import Image from 'next/image';
 import Link from 'next/link';
 
 const Header = () => {
@@ -6,7 +7,13 @@ const Header = () => {
     <div className="py-4 px-5 text-white bg-gray-900 shadow-md">
       <div className="container mx-auto flex justify-between">
         <Link href="/" className="flex">
-          <img src={Logo.src} className="w-6 md:w-12" alt="logo" />
+          <Image
+            src={Logo.src}
+            className="w-6 md:w-12"
+            width={48}
+            height={48}
+            alt="logo"
+          />
         </Link>
         <div className="nav-items ml-5 md:ml-10">
           <input
