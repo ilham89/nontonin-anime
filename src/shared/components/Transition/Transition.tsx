@@ -1,7 +1,7 @@
 import React from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { useRouter } from 'next/router';
-import { IBaseLayout } from '../interfaces/base';
+import { IBaseLayout } from '@/shared/interfaces/base';
 
 const variants = {
   out: {
